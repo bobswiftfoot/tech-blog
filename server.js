@@ -13,7 +13,10 @@ const sequelize = require('./config/connection');
 
 const session = {
     secret: process.env.SESSION_SECRET,
-    cookie: {},
+    cookie: {
+        //maxAge: 60000 //1 min for testing
+        maxAge: 3600000 //1 hour
+    },
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({
