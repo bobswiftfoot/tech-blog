@@ -8,7 +8,7 @@ router.get('/', (req, res) =>
         attributes: { exclude: ['password'] },
         include: [
             {
-                model: Pet,
+                model: Post,
                 include: [
                     {
                         model: Comment,
@@ -38,7 +38,7 @@ router.get('/:id', (req, res) =>
         },
         include: [
             {
-                model: Pet,
+                model: Post,
                 include: [
                     {
                         model: Comment,
