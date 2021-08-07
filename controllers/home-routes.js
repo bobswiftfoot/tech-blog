@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) =>
 {
@@ -10,13 +11,13 @@ router.get('/login', (req, res) =>
     if (req.session.loggedIn)
     {
         res.redirect('/');
-        return;
+        return; 
     }
 
     res.render('login', { loggedIn: req.session.loggedIn });
 });
 
-router.get('/dashboard', (req, res) =>
+router.get('/dashboard', withAuth, (req, res) =>
 {
     res.render('dashboard', { loggedIn: req.session.loggedIn });
 });
