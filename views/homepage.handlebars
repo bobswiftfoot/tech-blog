@@ -1,7 +1,10 @@
-<ol class="post-list">
+<h1 class="bg-dark text-light p-1">
+  The Tech Blog
+</h1>
+<ul class="list-group m-3">
   {{#each posts as |post|}}
-  <li>
+  <li class="list-group-item p-0 card mb-3">
     {{> post-info post }}
   </li>
   {{/each}}
-  </ol>
+</ul>

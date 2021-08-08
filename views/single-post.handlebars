@@ -1,15 +1,12 @@
 <article class="post">
-    {{> post-info post }}
-
+    <h1 class="bg-dark text-light p-1">Dashboard</h1>
+    <div class="card m-3">
+        {{> post-info post }}
+    </div>
     {{#if loggedIn}}
-    <form class="comment-form">
-        <div>
-            <textarea name="comment-body"></textarea>
-        </div>
-    
-        <div>
-            <button type="submit">Add Comment</button>
-        </div>
+    <form class="comment-form m-3 w-25 p-1">
+        <textarea name="comment-body" class="form-control"></textarea>
+        <button type="submit" class="btn btn-primary">Add Comment</button>
     </form>
     {{/if}}
 

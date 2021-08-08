@@ -1,13 +1,13 @@
-<article class="post">
-    <div class="title">
+<div class="card-body">
+    <div class="card-header bg-dark text-light">
         <h2>{{title}}</h2>
     </div>
-    <div class="contents">
+    <div class="card-text p-3">
         <p>{{contents}}</p>
     </div>
-    <div class="meta">
-        {{user.username}} on {{format_date createdAt}}
+    <div class="card-footer">
+        by {{user.username}} on {{format_date createdAt}}
         |
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
-</article>
+</div>
