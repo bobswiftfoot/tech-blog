@@ -77,7 +77,18 @@ router.post('/', (req, res) =>
         password: 'password1234'
     }*/
     User.create(req.body)
-        .then(dbUserData => res.json(dbUserData))
+        .then(dbUserData => 
+        {
+            req.session.save(() =>
+            {
+                // declare session variables
+                req.session.user_id = dbUserData.id;
+                req.session.username = dbUserData.user_name;
+                req.session.loggedIn = true;
+
+                res.json(dbUserData)
+            });
+        })
         .catch(err =>
         {
             console.log(err);
